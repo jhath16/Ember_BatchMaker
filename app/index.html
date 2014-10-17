@@ -114,50 +114,65 @@
 
     <script type='text/x-handlebars' data-template-name='recipes/create'>
       <div class='create-recipe'>
-          <div class='basic-info'>
-            <h3><span>Basic Info<span></h3>
-            <div>
-              <div class='basic-info-left'>
-                {{#link-to  'index'}}
-                  <div class='add-photo'>
-                    <span class="mega-octicon octicon-plus"></span>
-                    <span>Add Photo</span>
-                  </div>
-                {{/link-to}}
-              </div>
-              <div class='basic-info-right'>
-                {{input type='text' class='' placeholder='Recipe Name' value=name}}
-                {{input type='text' class='' placeholder='By' value=author}}
-                  {{input type='checkbox' checked=isPublic}}<span>Make it Public (By default, your recipes will be kept private)</span>
-              </div>
+        <div class='basic-info'>
+          <h3><span>Basic Info<span></h3>
+          <div>
+            <div class='basic-info-left'>
+              {{#link-to  'index'}}
+                <div class='add-photo'>
+                  <span class="mega-octicon octicon-plus"></span>
+                  <span>Add Photo</span>
+                </div>
+              {{/link-to}}
             </div>
-            <div class='basic-info-form'>
-              {{view Ember.Select content=recipeType value=selectedRecipeType prompt="Recipe Type"}}
-              {{input value=prepTime placeholder="Prep Time"}}
-              {{input value=cookTime placeholder="Cook Time"}}
-              <span class='cook-temp'>
-                {{input value=cookTemp placeholder="Cook Temp"}}
-                {{view Ember.Select content=cookUnit value=selectedTempUnit}}
-              </span>
-              <br>
-              <span>This recipe will make</span>
-              {{input value=amount placeholder="Amount"}}
-              {{input class='product-name-input' value=productName placeholder="cookies,loaves,etc"}}
-              <button class='btn btn-success' {{action 'addRecipe'}}>Submit</button>
+            <div class='basic-info-right'>
+              {{input type='text' class='' placeholder='Recipe Name' value=name}}
+              {{input type='text' class='' placeholder='By' value=author}}
+                {{input type='checkbox' checked=isPublic}}<span>Make it Public (By default, your recipes will be kept private)</span>
             </div>
           </div>
-          <div class='step'>
-            <h3>Step 1</h3>
-            <div class='ingredient'>
-              {{input type='text' class='amount' placeholder='amount'}}
-              {{view Ember.Select content=ingredientUnit prompt='Unit'}}
-              {{input type='text' class='ingredient' placeholder='Ingredient'}}
-              <button class='btn btn-inverse'>-</button>
-            </div>
+          <div class='basic-info-form'>
+            {{view Ember.Select content=recipeType value=selectedRecipeType prompt="Recipe Type"}}
+            {{input value=prepTime placeholder="Prep Time"}}
+            {{input value=cookTime placeholder="Cook Time"}}
+            <span class='cook-temp'>
+              {{input value=cookTemp placeholder="Cook Temp"}}
+              {{view Ember.Select content=cookUnit value=selectedTempUnit}}
+            </span>
+            <br>
+            <span>This recipe will make</span>
+            {{input value=amount placeholder="Amount"}}
+            {{input class='product-name-input' value=productName placeholder="cookies,loaves,etc"}}
           </div>
+        </div>
+        <h3 class='overlay-header'>Step 1</h3>
+        <div class='step'>
+          <div class='ingredient'>
+            {{input type='text' class='amount' placeholder='amount'}}
+            {{view Ember.Select content=ingredientUnit prompt='Unit'}}
+            {{input type='text' class='ingredient' placeholder='Ingredient'}}
+            <button class='btn btn-danger'>-</button><br>
+            <button class='btn btn-success'>Add Another Ingredient</button>
+            <br>
+          </div>
+          <textarea placeholder='What directions go with this step?'></textarea>
+        </div>
+        <h3 class='overlay-header'>Personal Notes</h3>
+        <div class='personal-notes'>
+          <textarea placeholder='Any additional notes?'></textarea><br>
+          <button class='btn btn-success' {{action 'addRecipe'}}>Submit</button>
+        </div>
       </div>
     </script>
 
+
+
+
+
+
+    <script type='text/x-handlebars' data-template-name='recipes/show'>
+
+    </script>
 
 
 
