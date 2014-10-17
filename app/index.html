@@ -1,0 +1,180 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Ember_BatchMaker</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+
+    <script type="text/x-handlebars">
+      <div class='page-container'>
+        <header>
+          <span class='left'>The kitchen is yours, chef!</span>
+          <h1>BATCH MAKER</h1>
+          <span class='right'>
+
+          </span>
+        </header>
+        <div class='sidebar'>
+          <nav>
+            <ul>
+              <li>{{#link-to 'index'}}My Recipes{{/link-to}}</li><hr>
+              <li>{{#link-to 'index'}}Public Recipes{{/link-to}}</li><hr>
+              <li>{{#link-to 'index'}}Popular Recipes{{/link-to}}</li><hr>
+              <li>{{#link-to 'index'}}My Favorite Recipes{{/link-to}}</li><hr>
+              <li>{{#link-to 'index'}}My Pantry{{/link-to}}</li>
+            </ul>
+          </nav>
+        </div>
+        <div class='outlet-container'>
+        {{outlet}}
+        </div>
+      </div>
+    </script>
+
+    <script type='text/x-handlebars' data-template-name='index'>
+
+      <div class='index-container'>
+        <h2>My Recipes</h2>
+        <span class='view-all'>{{#link-to 'index'}}View All{{/link-to}}</span>
+      <section>
+        {{#link-to 'recipes.create'}}
+          <div class='recipe-box'>
+            <div class="mega-octicon octicon-plus"></div>
+            <span>Add Recipe</span>
+          </div>
+        {{/link-to}}
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+      </section>
+        <h2>Public Recipes</h2>
+        <span class='view-all'>{{#link-to 'index'}}View All{{/link-to}}</span>
+      <section>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+      </section>
+        <h2>Popular Recipes</h2>
+        <span class='view-all'>{{#link-to 'index'}}View All{{/link-to}}</span>
+      <section>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+      </section>
+        <h2>My Favorite Recipes</h2>
+        <span class='view-all'>{{#link-to 'index'}}View All{{/link-to}}</span>
+      <section>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+      </section>
+        <h2>My Pantry</h2>
+        <span class='view-all'>{{#link-to 'index'}}View All{{/link-to}}</span>
+      <section>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+        <div class='recipe-box'></div>
+      </section>
+      </div>
+    </script>
+
+
+
+
+
+
+    <script type='text/x-handlebars' data-template-name='recipes/create'>
+      <div class='create-recipe'>
+        <form>
+          <div class='basic-info'>
+            <h3><span>Basic Info<span></h3>
+            <div>
+              <div class='basic-info-left'>
+                {{#link-to  'index'}}
+                  <div class='add-photo'>
+                    <span class="mega-octicon octicon-plus"></span>
+                    <span>Add Photo</span>
+                  </div>
+                {{/link-to}}
+              </div>
+              <div class='basic-info-right'>
+                {{input type='text' class='' placeholder='Recipe Name' value=name}}
+                {{input type='text' class='' placeholder='By' value=author}}
+                  <input type='checkbox' checked=isPublic><span>Keep it Private</span>
+              </div>
+            </div>
+            <div class='basic-info-form'>
+              {{view Ember.Select content=recipeType value=selectedRecipeType prompt="Recipe Type"}}
+              {{input value=prepTime placeholder="Prep Time"}}
+              {{input value=cookTime placeholder="Cook Time"}}
+              <span class='cook-temp'>
+                {{input value=cookTemp placeholder="Cook Temp"}}
+                {{view Ember.Select content=cookUnit value=selectedTempUnit}}
+              </span>
+              <br>
+              <span>This recipe will make</span>
+              {{input value=amount placeholder="Amount"}}
+              {{input class='product-name-input' value=productName placeholder="cookies,loaves,etc"}}
+              <button class='btn btn-success' {{action 'addRecipe'}}>Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </script>
+
+
+
+
+
+
+
+
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/underscore/underscore.js"></script>
+    <script src="../bower_components/handlebars/handlebars.js"></script>
+    <script src="../bower_components/ember/ember.js"></script>
+    <script src="../bower_components/ember-data/ember-data.js"></script>
+    <script src="../bower_components/firebase/firebase.js"></script>
+    <script src="../bower_components/emberfire/dist/emberfire.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js scripts/main.js -->
+        <script src="js/application.js"></script>
+        <script src="js/router.js"></script>
+        <script src="js/controllers/application_controller.js"></script>
+        <script src="js/controllers/recipes_create_controller.js"></script>
+        <script src="js/models/recipe.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
