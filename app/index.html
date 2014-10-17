@@ -14,6 +14,8 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
+    <link rel='stylesheet' type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/octicons/2.1.2/octicons.min.css'/>
+    <link rel='stylesheet' type='text/css' href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap.min.css'/>
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
@@ -112,7 +114,6 @@
 
     <script type='text/x-handlebars' data-template-name='recipes/create'>
       <div class='create-recipe'>
-        <form>
           <div class='basic-info'>
             <h3><span>Basic Info<span></h3>
             <div>
@@ -127,7 +128,7 @@
               <div class='basic-info-right'>
                 {{input type='text' class='' placeholder='Recipe Name' value=name}}
                 {{input type='text' class='' placeholder='By' value=author}}
-                  <input type='checkbox' checked=isPublic><span>Keep it Private</span>
+                  {{input type='checkbox' checked=isPublic}}<span>Make it Public (By default, your recipes will be kept private)</span>
               </div>
             </div>
             <div class='basic-info-form'>
@@ -145,7 +146,15 @@
               <button class='btn btn-success' {{action 'addRecipe'}}>Submit</button>
             </div>
           </div>
-        </form>
+          <div class='step'>
+            <h3>Step 1</h3>
+            <div class='ingredient'>
+              {{input type='text' class='amount' placeholder='amount'}}
+              {{view Ember.Select content=ingredientUnit prompt='Unit'}}
+              {{input type='text' class='ingredient' placeholder='Ingredient'}}
+              <button class='btn btn-inverse'>-</button>
+            </div>
+          </div>
       </div>
     </script>
 

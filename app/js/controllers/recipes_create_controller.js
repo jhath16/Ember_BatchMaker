@@ -2,13 +2,14 @@ Batch.RecipesCreateController = Ember.Controller.extend({
 needs:['application'],
 recipeType:['Breakfast', 'Lunch','Dinner','Dessert'],
 cookUnit:['°Fahrenheit','°Celsius'],
+ingredientUnit:['Cups','Ounces'],
 
 actions: {
   addRecipe: function () {
     var recipes = this.store.createRecord('recipe',  {
       user:this.get('controllers.application.currentUser'),
       name:this.get('name'),
-      author:this.get('by'),
+      author:this.get('author'),
       public:this.get('isPublic'),
       type:this.get('selectedRecipeType'),
       prepTime:this.get('prepTime'),

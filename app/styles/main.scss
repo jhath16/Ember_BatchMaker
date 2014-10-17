@@ -91,7 +91,7 @@ h1 {
   .view-all {
     float:right;
     position:relative;
-    top:14px;
+    top:30px;
     background:white;
     padding-left:10px;
   }
@@ -251,6 +251,23 @@ h1 {
     height:28px;
     outline:none;
     border:1px solid black;
-
+    margin:0;
   }
+}
+
+.step {
+  padding:5px;
+  input,
+  select {
+    height:32px;
+    border:1px solid black;
+    border-radius:5px;
+    outline:none;
+    width:20%;
+  }
+  .btn {
+    outline:none;
+  }
+
+
 }
