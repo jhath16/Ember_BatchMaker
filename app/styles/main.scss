@@ -7,6 +7,10 @@ body {
   font-family:sans-serif;
 }
 
+button {
+  outline:none !important;
+}
+
 .page-container {
   height:800px;
 }
@@ -131,10 +135,20 @@ h1 {
   float:left;
 }
 
-.octicon-plus {
+a {
+  text-decoration:none;
+  color:#333;
+}
+
+.outlet-container .octicon-plus {
   display:block;
   margin-top:20px;
   font-size:58px;
+}
+
+header .octicon {
+  font-size:1.8em;
+  margin:0 12px;
 }
 
 
@@ -183,6 +197,7 @@ h1 {
     span {
       padding-right:10px;
       background:white;
+      color:#828282;
     }
   }
 }
@@ -311,4 +326,44 @@ h1 {
   button {
     margin-left:80%;
   }
+}
+
+//==========================================================================
+//                                 Login
+//==========================================================================
+
+.login-container {
+  margin:50px auto;
+  width:70%;
+  height:350px;
+  border:1px solid #333;
+
+  div {
+    display:inline-block;
+    width:50%;
+    height:100%;
+    padding:10px;
+    float:left;
+  }
+
+  h1 {
+    width:100%;
+    display:block;
+    border-bottom:1px solid #e6e6e6;
+    margin:7px 0;
+  }
+
+  input {
+    height:30px;
+    margin:12px 0;
+  }
+}
+
+
+.sign-in {
+  border-left:1px solid;
+}
+
+.sign-up {
+  border-right:1px solid;
 }

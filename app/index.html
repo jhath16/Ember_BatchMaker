@@ -31,7 +31,9 @@
           <span class='left'>The kitchen is yours, chef!</span>
           <h1>BATCH MAKER</h1>
           <span class='right'>
-
+            {{#link-to 'index'}}<span class="octicon octicon-plus"></span>{{/link-to}}
+            {{#link-to 'login'}}<span class="octicon octicon-person"></span>{{/link-to}}
+            {{#link-to 'index'}}<span class="octicon octicon-gear"></span>{{/link-to}}
           </span>
         </header>
         <div class='sidebar'>
@@ -107,6 +109,24 @@
       </div>
     </script>
 
+    <script type='text/x-handlebars' data-template-name='login'>
+      <div class='login-container'>
+        <div class='sign-up'>
+          <h1>Sign Up</h1>
+          {{input type='text' value=email placeholder='Email Address'}}
+          {{input type='text' value=username placeholder='Username'}}
+          {{input type='password' value=password placeholder="Password"}}<br>
+          <button class='btn btn-success'>Sign Up</button>
+        </div>
+        <div class='sign-in'>
+          <h1>Sign In</h1>
+          {{input type='text' value=email placeholder='Email Address'}}
+          {{input type='password' value=password placeholder="Password"}}<br>
+          <button class='btn btn-primary'>Sign In</button>
+        </div>
+      </div>
+    </script>
+
 
 
 
@@ -160,7 +180,7 @@
         <h3 class='overlay-header'>Personal Notes</h3>
         <div class='personal-notes'>
           <textarea placeholder='Any additional notes?'></textarea><br>
-          <button class='btn btn-success' {{action 'addRecipe'}}>Submit</button>
+          <button class='btn btn-success' {{action 'addRecipe'}}>Save Recipe</button>
         </div>
       </div>
     </script>
