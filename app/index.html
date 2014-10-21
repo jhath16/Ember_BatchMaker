@@ -31,7 +31,7 @@
           <span class='left'>The kitchen is yours, chef!</span>
           <h1>BATCH MAKER</h1>
           <span class='right'>
-            {{#link-to 'index'}}<span class="octicon octicon-plus"></span>{{/link-to}}
+            {{#link-to 'recipes.create'}}<span class="octicon octicon-plus"></span>{{/link-to}}
             {{#link-to 'login'}}<span class="octicon octicon-person"></span>{{/link-to}}
             {{#link-to 'index'}}<span class="octicon octicon-gear"></span>{{/link-to}}
           </span>
@@ -113,16 +113,15 @@
       <div class='login-container'>
         <div class='sign-up'>
           <h1>Sign Up</h1>
-          {{input type='text' value=email placeholder='Email Address'}}
-          {{input type='text' value=username placeholder='Username'}}
-          {{input type='password' value=password placeholder="Password"}}<br>
-          <button class='btn btn-success'>Sign Up</button>
+          {{input type='text' value=signUpEmail placeholder='Email Address'}}
+          {{input type='password' value=signUpPassword placeholder="Password"}}<br>
+          <button class='btn btn-success' {{action "signUp"}}>Sign Up</button>
         </div>
         <div class='sign-in'>
           <h1>Sign In</h1>
-          {{input type='text' value=email placeholder='Email Address'}}
-          {{input type='password' value=password placeholder="Password"}}<br>
-          <button class='btn btn-primary'>Sign In</button>
+          {{input type='text' value=sign-in-email placeholder='Email Address'}}
+          {{input type='password' value=sign-in-password placeholder="Password"}}<br>
+          <button class='btn btn-primary' {{action 'logIn'}}>Sign In</button>
         </div>
       </div>
     </script>
@@ -180,7 +179,7 @@
         <h3 class='overlay-header'>Personal Notes</h3>
         <div class='personal-notes'>
           <textarea placeholder='Any additional notes?'></textarea><br>
-          <button class='btn btn-success' {{action 'addRecipe'}}>Save Recipe</button>
+          <button class='btn btn-warning' {{action 'addRecipe'}}>Save Recipe</button>
         </div>
       </div>
     </script>
@@ -216,6 +215,7 @@
         <!-- build:js scripts/main.js -->
         <script src="js/application.js"></script>
         <script src="js/router.js"></script>
+        <script src="js/controllers/login_controller.js"></script>
         <script src="js/controllers/application_controller.js"></script>
         <script src="js/controllers/recipes_create_controller.js"></script>
         <script src="js/models/recipe.js"></script>

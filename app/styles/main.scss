@@ -309,6 +309,7 @@ header .octicon {
   display:inline-block;
   padding-right:10px;
   font-size:1.3em;
+  color:#828282;
 }
 
 .personal-notes {
@@ -337,6 +338,8 @@ header .octicon {
   width:70%;
   height:350px;
   border:1px solid #333;
+  box-shadow:0 4px 10px grey;
+  border-radius:5px;
 
   div {
     display:inline-block;
@@ -357,13 +360,4 @@ header .octicon {
     height:30px;
     margin:12px 0;
   }
-}
-
-
-.sign-in {
-  border-left:1px solid;
-}
-
-.sign-up {
-  border-right:1px solid;
 }
